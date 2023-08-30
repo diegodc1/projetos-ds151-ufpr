@@ -5,13 +5,23 @@ import {
   FlatList,
   StyleSheet,
   Text,
-  StatusBar
+  StatusBar,
+  Image
 } from 'react-native'
 
 const DATA = [
-  { id: '01', title: 'First Item' },
-  { id: '02', title: 'Second Item' },
-  { id: '03', title: 'Third Item' }
+  {
+    uri: 'https://source.unsplash.com/random/520x350/?wallpaper,landscape',
+    with: '60%'
+  },
+  {
+    uri: 'https://source.unsplash.com/random/580x550/?wallpaper,landscape',
+    with: '100%'
+  },
+  {
+    uri: 'https://source.unsplash.com/random/620x350/?wallpaper,landscape',
+    with: '30%'
+  }
 ]
 
 const Item = ({ title }) => (
@@ -19,15 +29,21 @@ const Item = ({ title }) => (
     <Text style={styles.title}>{title}</Text>
   </View>
 )
-
 export default function Home2() {
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={({ item }) => <Item title={item.title} />}
-        keyExtractor={item => item.id}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={DATA}
+          contentContainerStyle={{ display: 1 }}
+          renderItem={({ item }) => (
+            <Image
+              style={{ width: item.with, height: 200 }}
+              source={{ uri: item.uri }}
+            />
+          )}
+        />
+      </View>
     </SafeAreaView>
   )
 }
