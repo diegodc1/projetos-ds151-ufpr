@@ -6,6 +6,7 @@ import HomeScreen from './components/HomeScreen'
 import Home2 from './components/Home2'
 import CounterScreen from './components/counterScreen'
 import MediaNotas from './components/MediaNotas'
+import Filmes from './components/Filmes'
 
 const Stack = createStackNavigator()
 
@@ -17,6 +18,7 @@ function App() {
         <Stack.Screen name="Home2" component={Home2} />
         <Stack.Screen name="Counter" component={CounterScreen} />
         <Stack.Screen name="Form" component={MediaNotas} />
+        <Stack.Screen name="Filmes" component={Filmes} />
       </Stack.Navigator>
     </NavigationContainer>
   )

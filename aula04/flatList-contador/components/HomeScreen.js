@@ -19,6 +19,10 @@ export default function HomeScreen({ navigation }) {
         title="Ir para form!"
         onPress={() => navigation.navigate('Form')}
       />
+      <Button
+        title="Ir para Filmes - API"
+        onPress={() => navigation.navigate('Filmes')}
+      />
     </View>
   )
 }
@@ -32,8 +36,8 @@ const style = StyleSheet.create({
     gap: 10
   },
   button: {
-    backgroundColor: 'black',
-    width: '100%',
+    backgroundColor: '#fff',
+    width: 100,
     color: '#EE4'
   }
 })
